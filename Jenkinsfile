@@ -1,21 +1,21 @@
-node
+pipeline {
 
-{
+  agent { label 'kubepod' }
 
-   def buildNumber = BUILD_NUMBER
+  stages {
 
-   stage("Git CheckOut"){
-
-        git url: 'https://github.com/Netra-sh/helm-charts.git',branch: 'master'
-
+    stage('Checkout Source') {
+      steps {
+        git url:'https://github.com/justmeandopensource/playjenkins.git', branch:'test-deploy-stage'
+      }
     }
 
-   stage("Build nginx") {
-
-         sh "helm install my-release nginx-stable/nginx-ingress "
-         sh "kubectl get deployments"
-   
+    stage('Deploy App') {
+      steps {
+        script {
+          kubernetesDeploy(configs: "nginx.yaml", kubeconfigId: "mykubeconfig")
+        }
+      }
     }
 
- }   
-  
+  }
