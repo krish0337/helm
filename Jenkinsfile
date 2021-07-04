@@ -16,7 +16,7 @@ pipeline {
          // kubernetesDeploy(configs: "nginx.yaml", kubeconfigId: "mykubeconfig")
         //}
     sh """ 
-      'chmod u+x ./kubectl'  
+      chmod u+x ./kubectl
      ./kubectl delete -f nginx.yml
      sleep 3
      ./kubectl get pods 
