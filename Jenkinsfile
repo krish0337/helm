@@ -19,7 +19,7 @@ pipeline {
      cd /usr/local/bin/
      ls 
     /usr/local/bin/kubectl  get pods 
-    /usr/local/bin/kubectl create -f nginx.yml 
+    /usr/local/bin/kubectl create -f nginx.yaml 
      sleep 3
      /usr/local/bin/kubectl get pods 
     
