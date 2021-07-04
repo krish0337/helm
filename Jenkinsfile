@@ -17,12 +17,12 @@ pipeline {
         //}
     sh """ 
      
-     kubectl delete -f nginx.yml
+     ./kubectl delete -f nginx.yml
      sleep 3
-     kubectl get pods 
-     kubectl create -f nginx.yml 
+     ./kubectl get pods 
+     ./kubectl create -f nginx.yml 
      sleep 3
-     kubectl get pods 
+     ./kubectl get pods 
     
     """
       }
