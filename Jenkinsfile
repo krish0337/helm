@@ -1,6 +1,6 @@
 pipeline {
 
-  agent { label 'kubepod' }
+ // agent { label 'kubepod' }
 
   stages {
 
@@ -12,9 +12,19 @@ pipeline {
 
     stage('Deploy App') {
       steps {
-        script {
-          kubernetesDeploy(configs: "nginx.yaml", kubeconfigId: "mykubeconfig")
-        }
+       // script {
+         // kubernetesDeploy(configs: "nginx.yaml", kubeconfigId: "mykubeconfig")
+        //}
+    sh """ 
+     
+     kubectl delete -f nginx.yml
+     sleep 3
+     kubectl get pods 
+     kubectl create -f nginx.yml 
+     sleep 3
+     kubectl get pods 
+    
+    """
       }
     }
 
