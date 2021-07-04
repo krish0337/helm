@@ -16,10 +16,10 @@ pipeline {
          // kubernetesDeploy(configs: "nginx.yaml", kubeconfigId: "mykubeconfig")
         //}
     sh """ 
-     kubectl get pods 
-     kubectl create -f nginx.yml 
+    /usr/local/bin/kubectl  get pods 
+    /usr/local/bin/kubectl create -f nginx.yml 
      sleep 3
-     kubectl get pods 
+     /usr/local/bin/kubectl get pods 
     
     """
       }
