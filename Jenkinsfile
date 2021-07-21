@@ -3,9 +3,6 @@ pipeline {
  agent any //{ label 'kubepod' }
 
   stages {
-       triggers {
-        pollSCM '* * * * *'
-       }
     stage('Checkout Source') {
       steps {
         git url:'https://github.com/krish0337/helm.git', branch:'main'
