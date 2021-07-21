@@ -17,6 +17,7 @@ pipeline {
         //}
     sh """ 
      
+     kubectl get pods
      helm list
     
     
