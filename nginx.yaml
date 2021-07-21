@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   labels:
     app: web
-  name: ubuntu
+  name: nginx
 spec:
   replicas: 1
   selector:
@@ -16,8 +16,8 @@ spec:
         app: web
     spec:
       containers:
-      - image: ubuntu
-        name: ubuntu
+      - image: nginx
+        name: nginx
 
 ---
 apiVersion: v1
@@ -25,7 +25,7 @@ kind: Service
 metadata:
   labels:
     app: web
-  name: ubuntu
+  name: nginx
 spec:
   ports:
   - nodePort: 32223
