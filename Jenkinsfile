@@ -17,9 +17,8 @@ pipeline {
         //}
     sh """ 
      
-    /usr/local/bin/kubectl  get pods 
-     brew install helm
-     which helm 
+     helm list
+    
     
     """
       }
