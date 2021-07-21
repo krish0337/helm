@@ -16,8 +16,8 @@ spec:
         app: web
     spec:
       containers:
-      - image: nginx
-        name: mynginx
+      - image: ubuntu
+        name: ubuntu
 
 ---
 apiVersion: v1
