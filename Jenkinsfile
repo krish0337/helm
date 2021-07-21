@@ -18,7 +18,7 @@ pipeline {
     sh """ 
      
     /usr/local/bin/kubectl  get pods 
-    /usr/local/bin/kubectl install nginx
+    /usr/local/bin/kubectl install kubectl
      sleep 3
      /usr/local/bin/kubectl get pods 
      /usr/local/bin/helm list
