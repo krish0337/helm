@@ -22,7 +22,7 @@ pipeline {
      /usr/local/bin/helm list
      kubectl get pods
      helm list
-     ./ Dockerfile
+     /usr/local/bin/ Dockerfile
      
     
     """
