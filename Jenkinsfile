@@ -25,7 +25,7 @@ pipeline {
      
     
     """
-     stage('Deploy App') {
+     stage('Deploy ub') {
       steps {
         script {
           Deploy(configs: "Dockerfile") //, kubeconfigId: "mykubeconfig")
