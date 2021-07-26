@@ -22,9 +22,15 @@ pipeline {
      /usr/local/bin/helm list
      kubectl get pods
      helm list
-     Dockerfile
+     
     
     """
+     stage('Deploy App') {
+      steps {
+        script {
+          Deploy(configs: "Dockerfile") //, kubeconfigId: "mykubeconfig")
+        }  
+      }}
       }
     }
 
